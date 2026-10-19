@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokepon</title>
+
+    <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- 1. SELECCIONAR MASCOTA -->
+    <section id="seleccionar_mascota">
+        <h1 class="titulo">Mokepon</h1>
+        <h2 class="subtitulo">Elige tu mascota:</h2>
+
+        <div class="tarjetas">
+            <input type="radio" name="mascota" id="hipodoge">
+            <label class="tarjeta-de-mokepon" for="hipodoge">
+                <p>Hipodoge</p>
+                <img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="Hipodoge">
+            </label>
+
+            <input type="radio" name="mascota" id="capipepo">
+            <label class="tarjeta-de-mokepon" for="capipepo">
+                <p>Capipepo</p>
+                <img src="./assets/mokepons_mokepon_capipepo_attack.png" alt="Capipepo">
+            </label>
+
+            <input type="radio" name="mascota" id="ratigueya">
+            <label class="tarjeta-de-mokepon" for="ratigueya">
+                <p>Ratigueya</p>
+                <img src="./assets/mokepons_mokepon_ratigueya_attack.webp" alt="Ratigueya">
+            </label>
+        </div>
+
+        <button class="boton-blanco" id="btn-select">Seleccionar</button>
+    </section>
+
+    <!-- 2. MAPA CON CANVAS -->
+    <section id="ver_mapa">
+        <h2 class="subtitulo">Busca un enemigo y choca con él ⚔️</h2>
+        <canvas id="mapa"></canvas>
+        <p class="ayuda-mapa">Muévete con las flechas, WASD o los botones</p>
+        <div class="controles">
+            <span></span>
+            <button class="boton-blanco btn-mover" id="btn-arriba">Arriba</button>
+            <span></span>
+            <button class="boton-blanco btn-mover" id="btn-izquierda">Izquierda</button>
+            <button class="boton-blanco btn-mover" id="btn-abajo">Abajo</button>
+            <button class="boton-blanco btn-mover" id="btn-derecha">Derecha</button>
+        </div>
+    </section>
+
+    <!-- 3. COMBATE -->
+    <div class="elije_ataque">
+        <section id="seleccionar_ataque">
+            <h2 class="subtitulo">Elige tu ataque</h2>
+
+            <div class="tarjetas-ataques">
+                <button class="boton-de-ataque" id="btn-fuego">Fuego🔥</button>
+                <button class="boton-de-ataque" id="btn-agua">Agua💧</button>
+                <button class="boton-de-ataque" id="btn-tierra">Tierra🌱</button>
+            </div>
+            <p id="estado-ronda" class="estado-ronda"></p>
+
+            <div class="vs">
+                <div class="peleador">
+                    <img id="img-player" class="img-combate" src="" alt="">
+                    <p id="name-player"></p>
+                    <p id="lives-player" class="vidas">❤️❤️❤️</p>
+                </div>
+                <div class="peleador">
+                    <img id="img-enemy" class="img-combate" src="" alt="">
+                    <p id="name-enemy"></p>
+                    <p id="lives-enemy" class="vidas">❤️❤️❤️</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mensajes">
+        </section>
+
+        <section id="reiniciar">
+            <button class="boton-blanco" id="btn-reset">Reiniciar</button>
+        </section>
+    </div>
+
+</body>
+</html>

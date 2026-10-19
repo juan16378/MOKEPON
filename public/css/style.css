@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;500&display=swap');
+
+:root{
+    --fondo: #041562;
+    --tarjeta: #11468F;
+    --seleccion: #5D8BF4;
+    --claro: #EEEEEE;
+    --blanco: #ffffff;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fondo);
+    color: var(--blanco);
+    margin: 0;
+    padding: 0 16px 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* ===== Títulos ===== */
+.titulo{
+    color: var(--blanco);
+    font-size: 32px;
+    font-family: 'Fredoka One', 'Arial Rounded MT Bold', sans-serif;
+    font-weight: normal;
+    margin: 30px 0 0;
+}
+
+.subtitulo{
+    color: var(--blanco);
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* ===== 1. Seleccionar mascota ===== */
+#seleccionar_mascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjetas{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon{
+    width: 180px;
+    height: 100px;
+    background: var(--tarjeta);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--blanco);
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.tarjeta-de-mokepon p{
+    margin: 0;
+}
+
+.tarjeta-de-mokepon img{
+    width: 80px;
+}
+
+.tarjeta-de-mokepon:hover{
+    background-color: #1a5bb5;
+}
+
+/* Ocultamos los radios: se elige tocando la tarjeta */
+input{
+    display: none;
+}
+
+input:checked + .tarjeta-de-mokepon{
+    background-color: var(--seleccion);
+}
+
+/* Botón transparente con borde blanco (Seleccionar, Reiniciar, flechas) */
+.boton-blanco{
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid var(--blanco);
+    color: var(--blanco);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.boton-blanco:hover{
+    background: var(--blanco);
+    color: var(--fondo);
+}
+
+/* ===== 2. Mapa ===== */
+#ver_mapa{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mapa{
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border-radius: 20px;
+    background-color: #8fd16a;
+}
+
+.ayuda-mapa{
+    margin: 12px 0 0;
+    font-size: 14px;
+    opacity: .85;
+}
+
+.controles{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.btn-mover{
+    width: 100px;
+    margin: 0;
+    touch-action: none;
+    user-select: none;
+}
+
+/* ===== 3. Combate ===== */
+.elije_ataque{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#seleccionar_ataque{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjetas-ataques{
+    display: flex;
+    gap: 10px;
+}
+
+.boton-de-ataque{
+    background-color: var(--tarjeta);
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 100px;
+    color: var(--blanco);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.boton-de-ataque:hover{
+    background-color: var(--seleccion);
+}
+
+.boton-de-ataque:disabled{
+    opacity: .4;
+    cursor: not-allowed;
+    background-color: var(--tarjeta);
+}
+
+.estado-ronda{
+    min-height: 22px;
+    margin: 12px 0 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.vs{
+    display: flex;
+    gap: 40px;
+}
+
+.peleador{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.peleador p{
+    margin: 0;
+    text-align: center;
+}
+
+.img-combate{
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+#img-enemy{
+    transform: scaleX(-1);
+}
+
+.vidas{
+    font-size: 28px;
+}
+
+#mensajes{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 420px;
+    max-height: 260px;
+    overflow-y: auto;
+    background: var(--claro);
+    color: var(--fondo);
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: center;
+}
+
+#mensajes p{
+    margin: 6px 0;
+}
+
+#mensajes h2{
+    font-family: 'Fredoka One', 'Arial Rounded MT Bold', sans-serif;
+    font-weight: normal;
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+/* ===== Celular ===== */
+@media (max-width: 600px){
+    .tarjetas,
+    .tarjetas-ataques{
+        flex-direction: column;
+    }
+
+    .vs{
+        gap: 20px;
+    }
+}
